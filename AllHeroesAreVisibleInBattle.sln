@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36811.4 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllHeroesAreVisibleInBattle", "AllHeroesAreVisibleInBattle.csproj", "{45C43857-6434-5759-0D6A-5626A1667334}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45C43857-6434-5759-0D6A-5626A1667334}.Debug|x64.ActiveCfg = Debug|x64
+		{45C43857-6434-5759-0D6A-5626A1667334}.Debug|x64.Build.0 = Debug|x64
+		{45C43857-6434-5759-0D6A-5626A1667334}.Release|x64.ActiveCfg = Release|x64
+		{45C43857-6434-5759-0D6A-5626A1667334}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ABF8B6BD-9EF4-408D-8FD7-BCB22E9067FB}
+	EndGlobalSection
+EndGlobal
