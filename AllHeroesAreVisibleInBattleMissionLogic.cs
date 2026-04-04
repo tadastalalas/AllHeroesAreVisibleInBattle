@@ -26,7 +26,6 @@ namespace AllHeroesAreVisibleInBattle
         public List<Agent> MissionCompanionAgents;
         public List<Agent> MissionFriendlyLordAgents;
         public List<Agent> MissionEnemyLordAgents;
-        private List<Agent> MissionEnemyLordAgentsDict;
         private TournamentBehavior _tournamentBehavior;
         private TournamentMatch _currentMatch;
 
@@ -37,7 +36,6 @@ namespace AllHeroesAreVisibleInBattle
             MissionFriendlyLordAgents = new List<Agent>();
             MissionCompanionAgents = new List<Agent>();
             MissionEnemyLordAgents = new List<Agent>();
-            MissionEnemyLordAgentsDict = new List<Agent>();
             _tournamentBehavior = null;
             _currentMatch = null;
         }
@@ -56,7 +54,7 @@ namespace AllHeroesAreVisibleInBattle
             this.MissionEnemyLordAgents.Clear();
             this.MissionCompanionAgents.Clear();
             this.MissionFriendlyLordAgents.Clear();
-            this.MissionEnemyLordAgentsDict.Clear();
+            // Removed MissionEnemyLordAgentsDict.Clear()
         }
 
         private const float RescanInterval = 20f;
@@ -91,10 +89,10 @@ namespace AllHeroesAreVisibleInBattle
                 if (agent.IsHuman && agent.Character != null && agent.Character.IsHero)
                 {
                     Hero? hero = Helpers.GetAgentHero(agent);
+                    // Removed MissionEnemyLordAgentsDict.Add — dict is gone
                     if (hero != null && !this.MissionEnemyLordAgents.Contains(agent))
                     {
                         this.MissionEnemyLordAgents.Add(agent);
-                        this.MissionEnemyLordAgentsDict.Add(agent);
                     }
                 }
             }
@@ -186,23 +184,19 @@ namespace AllHeroesAreVisibleInBattle
         {
             for (int i = 0; i < this.MissionEnemyLordAgents.Count; i++)
             {
-                bool flag2 = this.MissionEnemyLordAgents[i] == affectedAgent;
-                if (flag2)
+                if (this.MissionEnemyLordAgents[i] == affectedAgent)
                 {
                     this.MissionEnemyLordAgents.RemoveAt(i);
-                    return;
+                    // Removed early `return` here — it was preventing cleanup of the
+                    // other lists when the same agent happened to be in MissionEnemyLordAgents.
+                    // Also removed MissionEnemyLordAgentsDict removal since the dict is gone.
+                    break;
                 }
-            }
-            
-            if (MissionEnemyLordAgentsDict.Contains(affectedAgent))
-            {
-                this.MissionEnemyLordAgentsDict.Remove(affectedAgent);
             }
 
             for (int j = 0; j < this.MissionCompanionAgents.Count; j++)
             {
-                bool flag4 = this.MissionCompanionAgents[j] == affectedAgent;
-                if (flag4)
+                if (this.MissionCompanionAgents[j] == affectedAgent)
                 {
                     this.MissionCompanionAgents.RemoveAt(j);
                     break;
