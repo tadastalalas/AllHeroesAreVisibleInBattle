@@ -54,7 +54,6 @@ namespace AllHeroesAreVisibleInBattle
             this.MissionEnemyLordAgents.Clear();
             this.MissionCompanionAgents.Clear();
             this.MissionFriendlyLordAgents.Clear();
-            // Removed MissionEnemyLordAgentsDict.Clear()
         }
 
         private const float RescanInterval = 20f;
@@ -89,7 +88,7 @@ namespace AllHeroesAreVisibleInBattle
                 if (agent.IsHuman && agent.Character != null && agent.Character.IsHero)
                 {
                     Hero? hero = Helpers.GetAgentHero(agent);
-                    // Removed MissionEnemyLordAgentsDict.Add — dict is gone
+                    
                     if (hero != null && !this.MissionEnemyLordAgents.Contains(agent))
                     {
                         this.MissionEnemyLordAgents.Add(agent);
@@ -187,9 +186,6 @@ namespace AllHeroesAreVisibleInBattle
                 if (this.MissionEnemyLordAgents[i] == affectedAgent)
                 {
                     this.MissionEnemyLordAgents.RemoveAt(i);
-                    // Removed early `return` here — it was preventing cleanup of the
-                    // other lists when the same agent happened to be in MissionEnemyLordAgents.
-                    // Also removed MissionEnemyLordAgentsDict removal since the dict is gone.
                     break;
                 }
             }
