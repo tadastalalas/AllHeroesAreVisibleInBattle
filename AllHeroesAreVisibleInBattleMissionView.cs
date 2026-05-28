@@ -30,6 +30,10 @@ namespace AllHeroesAreVisibleInBattle
         private bool _companionsHighlighted = false;
         private bool _friendlyLordsHighlighted = false;
         private bool _enemyLordsHighlighted = false;
+        private bool _formationCaptainsHighlighted = false;
+        private bool _armyGeneralHighlighted = false;
+
+        private const int HighlightDistance = 30;
 
         public AllHeroesAreVisibleInBattleMissionView()
         {
@@ -47,13 +51,32 @@ namespace AllHeroesAreVisibleInBattle
                     HighlightCompanions(true);
                     HighlightFriendlyLords(true);
                     HighlightEnemyLords(true);
+                    HighlightFormationCaptains(true);
+                    HighlightArmyGeneral(true);
                 }
                 if (Input.IsKeyReleased(InputKey.LeftAlt))
                 {
                     HighlightCompanions(false);
                     HighlightFriendlyLords(false);
                     HighlightEnemyLords(false);
+                    HighlightFormationCaptains(false);
+                    HighlightArmyGeneral(false);
                 }
+            }
+        }
+
+        public override void OnMissionModeChange(MissionMode oldMissionMode, bool atStart)
+        {
+            base.OnMissionModeChange(oldMissionMode, atStart);
+
+            if (oldMissionMode == MissionMode.Battle)
+            {
+                HighlightCompanions(false);
+                HighlightFriendlyLords(false);
+                HighlightEnemyLords(false);
+                HighlightFormationCaptains(false);
+                HighlightArmyGeneral(false);
+                OnClearScene();
             }
         }
 
@@ -77,33 +100,25 @@ namespace AllHeroesAreVisibleInBattle
                     {
                         if (Agent.Main != null && Agent.Main.IsActive())
                         {
-                            if (Agent.Main.Position.Distance(agent.Position) < 30f)
+                            if (Agent.Main.Position.Distance(agent.Position) < HighlightDistance)
                             {
-                                MBAgentVisuals agentVisuals = agent.AgentVisuals;
-
-                                if (agentVisuals != null)
-                                    agentVisuals.SetContourColor(new uint?(companionContourColor), true);
+                                if (agent.AgentVisuals != null)
+                                    agent.AgentVisuals.SetContourColor(new uint?(companionContourColor), true);
                             }
                         }
                         else if (Agent.Main == null || !Agent.Main.IsActive())
                         {
-                            MBAgentVisuals agentVisuals = agent.AgentVisuals;
-
-                            if (agentVisuals != null)
-                                agentVisuals.SetContourColor(new uint?(companionContourColor), true);
+                            if (agent.AgentVisuals != null)
+                                agent.AgentVisuals.SetContourColor(new uint?(companionContourColor), true);
                         }
                     }
                     else if (agent != null)
                     {
-                        MBAgentVisuals agentVisuals2 = agent.AgentVisuals;
-                        if (agentVisuals2 != null)
-                        {
-                            agentVisuals2.SetContourColor(null, true);
-                        }
+                        if (agent.AgentVisuals != null)
+                            agent.AgentVisuals.SetContourColor(null, true);
                     }
                 }
             }
-            
             this._companionsHighlighted = show;
         }
 
@@ -127,32 +142,25 @@ namespace AllHeroesAreVisibleInBattle
                     {
                         if (Agent.Main != null && Agent.Main.IsActive())
                         {
-                            if (Agent.Main.Position.Distance(agent.Position) < 30f)
+                            if (Agent.Main.Position.Distance(agent.Position) < HighlightDistance)
                             {
-                                MBAgentVisuals agentVisuals = agent.AgentVisuals;
-
-                                if (agentVisuals != null)
-                                    agentVisuals.SetContourColor(new uint?(focusedContourColor), true);
+                                if (agent.AgentVisuals != null)
+                                    agent.AgentVisuals.SetContourColor(new uint?(focusedContourColor), true);
                             }
                         }
                         else if (Agent.Main == null || !Agent.Main.IsActive())
                         {
-                            MBAgentVisuals agentVisuals = agent.AgentVisuals;
-
-                            if (agentVisuals != null)
-                                agentVisuals.SetContourColor(new uint?(focusedContourColor), true);
+                            if (agent.AgentVisuals != null)
+                                agent.AgentVisuals.SetContourColor(new uint?(focusedContourColor), true);
                         }
                     }
                     else if (agent != null)
                     {
-                        MBAgentVisuals agentVisuals2 = agent.AgentVisuals;
-
-                        if (agentVisuals2 != null)
-                            agentVisuals2.SetContourColor(null, true);
+                        if (agent.AgentVisuals != null)
+                            agent.AgentVisuals.SetContourColor(null, true);
                     }
                 }
             }
-
             this._friendlyLordsHighlighted = show;
         }
 
@@ -176,33 +184,110 @@ namespace AllHeroesAreVisibleInBattle
                     {
                         if (Agent.Main != null && Agent.Main.IsActive())
                         {
-                            if (Agent.Main.Position.Distance(agent.Position) < 30f)
+                            if (Agent.Main.Position.Distance(agent.Position) < HighlightDistance)
                             {
-                                MBAgentVisuals agentVisuals = agent.AgentVisuals;
-
-                                if (agentVisuals != null)
-                                    agentVisuals.SetContourColor(new uint?(focusedContourColor), true);
+                                if (agent.AgentVisuals != null)
+                                    agent.AgentVisuals.SetContourColor(new uint?(focusedContourColor), true);
                             }
                         }
                         else if (Agent.Main == null || !Agent.Main.IsActive())
                         {
-                            MBAgentVisuals agentVisuals = agent.AgentVisuals;
-
-                            if (agentVisuals != null)
-                                agentVisuals.SetContourColor(new uint?(focusedContourColor), true);
+                            if (agent.AgentVisuals != null)
+                                agent.AgentVisuals.SetContourColor(new uint?(focusedContourColor), true);
                         }
                     }
                     else if (agent != null)
                     {
-                        MBAgentVisuals agentVisuals2 = agent.AgentVisuals;
-
-                        if (agentVisuals2 != null)
-                            agentVisuals2.SetContourColor(null, true);
+                        if (agent.AgentVisuals != null)
+                            agent.AgentVisuals.SetContourColor(null, true);
                     }
                 }
             }
-
             this._enemyLordsHighlighted = show;
+        }
+
+        private void HighlightFormationCaptains(bool show = true)
+        {
+            if (show == this._formationCaptainsHighlighted)
+                return;
+
+            if (AllHeroesAreVisibleInBattleMissionLogic.Instance == null ||
+                AllHeroesAreVisibleInBattleMissionLogic.Instance?.MissionFormationCaptainAgents == null ||
+                AllHeroesAreVisibleInBattleMissionLogic.Instance.MissionFormationCaptainAgents.Count == 0)
+                return;
+
+            uint captainContourColor = new Color(0.2f, 0.4f, 1f, 1f).ToUnsignedInteger();
+
+            foreach (Agent agent in AllHeroesAreVisibleInBattleMissionLogic.Instance.MissionFormationCaptainAgents)
+            {
+                if (agent != null && agent.IsActive())
+                {
+                    if (show)
+                    {
+                        if (Agent.Main != null && Agent.Main.IsActive())
+                        {
+                            if (Agent.Main.Position.Distance(agent.Position) < HighlightDistance)
+                            {
+                                if (agent.AgentVisuals != null)
+                                    agent.AgentVisuals.SetContourColor(new uint?(captainContourColor), true);
+                            }
+                        }
+                        else if (Agent.Main == null || !Agent.Main.IsActive())
+                        {
+                            if (agent.AgentVisuals != null)
+                                agent.AgentVisuals.SetContourColor(new uint?(captainContourColor), true);
+                        }
+                    }
+                    else if (agent != null)
+                    {
+                        if (agent.AgentVisuals != null)
+                            agent.AgentVisuals.SetContourColor(null, true);
+                    }
+                }
+            }
+            this._formationCaptainsHighlighted = show;
+        }
+
+        private void HighlightArmyGeneral(bool show = true)
+        {
+            if (show == this._armyGeneralHighlighted)
+                return;
+
+            if (AllHeroesAreVisibleInBattleMissionLogic.Instance?.MissionArmyGeneralAgent == null)
+                return;
+
+            uint generalContourColor = new Color(0f, 1f, 1f, 1f).ToUnsignedInteger();
+
+            Agent? agent = AllHeroesAreVisibleInBattleMissionLogic.Instance?.MissionArmyGeneralAgent;
+
+            if (agent == null || agent.AgentVisuals == null)
+                return;
+
+            if (agent != null && agent.IsActive())
+            {
+                if (show)
+                {
+                    if (Agent.Main != null && Agent.Main.IsActive())
+                    {
+                        if (Agent.Main.Position.Distance(agent.Position) < HighlightDistance)
+                        {
+                            if (agent.AgentVisuals != null)
+                                agent.AgentVisuals.SetContourColor(new uint?(generalContourColor), true);
+                        }
+                    }
+                    else if (Agent.Main == null || !Agent.Main.IsActive())
+                    {
+                        if (agent.AgentVisuals != null)
+                            agent.AgentVisuals.SetContourColor(new uint?(generalContourColor), true);
+                    }
+                }
+                else if (agent != null)
+                {
+                    if (agent.AgentVisuals != null)
+                        agent.AgentVisuals.SetContourColor(null, true);
+                }
+            }
+            this._armyGeneralHighlighted = show;
         }
 
         public override void OnAgentRemoved(Agent affectedAgent, Agent affectorAgent, AgentState agentState, KillingBlow blow)
