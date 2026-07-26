@@ -21,48 +21,133 @@ namespace AllHeroesAreVisibleInBattle
     [DefaultView]
     public class AllHeroesAreVisibleInBattleMissionView : MissionView
     {
-        public static AllHeroesAreVisibleInBattleMissionView Instance { get; set; }
+        private static readonly uint CompanionColor    = new Color(0f, 0.85f, 0.1f, 1f).ToUnsignedInteger();
+        private static readonly uint FriendlyLordColor = new Color(1f, 1f, 0f, 1f).ToUnsignedInteger();
+        private static readonly uint EnemyLordColor    = new Color(1f, 0f, 0f, 1f).ToUnsignedInteger();
+        private static readonly uint CaptainColor      = new Color(0.2f, 0.4f, 1f, 1f).ToUnsignedInteger();
+        private static readonly uint GeneralColor      = new Color(0f, 1f, 1f, 1f).ToUnsignedInteger();
 
-        private GauntletLayer _layer;
-        private GauntletMovieIdentifier _movie;
-        private Hero _hero = null;
+        private const float HighlightDistanceSquared = 30f * 30f;
+        private const float RefreshInterval = 0.25f;
 
-        private bool _companionsHighlighted = false;
-        private bool _friendlyLordsHighlighted = false;
-        private bool _enemyLordsHighlighted = false;
-        private bool _formationCaptainsHighlighted = false;
-        private bool _armyGeneralHighlighted = false;
-
-        private const int HighlightDistance = 30;
-
-        public AllHeroesAreVisibleInBattleMissionView()
-        {
-            AllHeroesAreVisibleInBattleMissionView.Instance = this;
-        }
-
+        private readonly List<Agent> _contouredAgents = new List<Agent>();
+        private readonly List<Agent> _desiredAgents = new List<Agent>();
+        private readonly List<uint> _desiredColors = new List<uint>();
+        private bool _highlightActive;
+        private float _refreshTimer;
+        
         public override void OnMissionScreenTick(float dt)
         {
             base.OnMissionScreenTick(dt);
-            
-            if (Mission.Mode == MissionMode.Battle)
+
+            bool shouldHighlight = Mission != null
+                                   && Mission.Mode == MissionMode.Battle
+                                   && TaleWorlds.InputSystem.Input.IsKeyDown(InputKey.LeftAlt);
+
+            if (!shouldHighlight)
             {
-                if (Input.IsKeyPressed(InputKey.LeftAlt))
-                {
-                    HighlightCompanions(true);
-                    HighlightFriendlyLords(true);
-                    HighlightEnemyLords(true);
-                    HighlightFormationCaptains(true);
-                    HighlightArmyGeneral(true);
-                }
-                if (Input.IsKeyReleased(InputKey.LeftAlt))
-                {
-                    HighlightCompanions(false);
-                    HighlightFriendlyLords(false);
-                    HighlightEnemyLords(false);
-                    HighlightFormationCaptains(false);
-                    HighlightArmyGeneral(false);
-                }
+                if (_highlightActive)
+                    ClearContours();
+
+                return;
             }
+
+            _refreshTimer -= dt;
+
+            if (_highlightActive && _refreshTimer > 0f)
+                return;
+
+            _refreshTimer = RefreshInterval;
+            RefreshContours();
+            _highlightActive = true;
+        }
+        
+        private void RefreshContours()
+        {
+            AllHeroesAreVisibleInBattleMissionLogic? logic = AllHeroesAreVisibleInBattleMissionLogic.Instance;
+
+            _desiredAgents.Clear();
+            _desiredColors.Clear();
+
+            if (logic != null)
+            {
+                Vec3? origin = GetHighlightOrigin();
+                CollectAgents(logic.MissionCompanionAgents, CompanionColor, origin);
+                CollectAgents(logic.MissionFriendlyLordAgents, FriendlyLordColor, origin);
+                CollectAgents(logic.MissionEnemyLordAgents, EnemyLordColor, origin);
+                CollectAgents(logic.MissionFormationCaptainAgents, CaptainColor, origin);
+                CollectAgent(logic.MissionArmyGeneralAgent, GeneralColor, origin);
+            }
+
+            for (int i = _contouredAgents.Count - 1; i >= 0; i--)
+            {
+                Agent agent = _contouredAgents[i];
+
+                if (_desiredAgents.Contains(agent))
+                    continue;
+
+                SetContour(agent, null);
+                _contouredAgents.RemoveAt(i);
+            }
+
+            for (int i = 0; i < _desiredAgents.Count; i++)
+            {
+                Agent agent = _desiredAgents[i];
+                SetContour(agent, _desiredColors[i]);
+
+                if (!_contouredAgents.Contains(agent))
+                    _contouredAgents.Add(agent);
+            }
+        }
+
+        // The render camera position works with any camera mod (RTS Camera, photo mode, spectator).
+        private Vec3? GetHighlightOrigin()
+        {
+            Scene? scene = Mission?.Scene;
+
+            if (scene != null)
+                return scene.LastFinalRenderCameraPosition;
+
+            return Agent.Main != null ? Agent.Main.Position : (Vec3?)null;
+        }
+
+        private void CollectAgents(List<Agent> agents, uint color, Vec3? origin)
+        {
+            for (int i = 0; i < agents.Count; i++)
+                CollectAgent(agents[i], color, origin);
+        }
+
+        private void CollectAgent(Agent? agent, uint color, Vec3? origin)
+        {
+            if (agent == null || agent == Agent.Main || !agent.IsActive())
+                return;
+
+            if (origin.HasValue && agent.Position.DistanceSquared(origin.Value) > HighlightDistanceSquared)
+                return;
+
+            if (_desiredAgents.Contains(agent))
+                return;
+
+            _desiredAgents.Add(agent);
+            _desiredColors.Add(color);
+        }
+
+        private static void SetContour(Agent agent, uint? color)
+        {
+            MBAgentVisuals visuals = agent.AgentVisuals;
+
+            if (visuals != null && visuals.IsValid())
+                visuals.SetContourColor(color, true);
+        }
+
+        private void ClearContours()
+        {
+            for (int i = 0; i < _contouredAgents.Count; i++)
+                SetContour(_contouredAgents[i], null);
+
+            _contouredAgents.Clear();
+            _highlightActive = false;
+            _refreshTimer = 0f;
         }
 
         public override void OnMissionModeChange(MissionMode oldMissionMode, bool atStart)
@@ -70,241 +155,29 @@ namespace AllHeroesAreVisibleInBattle
             base.OnMissionModeChange(oldMissionMode, atStart);
 
             if (oldMissionMode == MissionMode.Battle)
-            {
-                HighlightCompanions(false);
-                HighlightFriendlyLords(false);
-                HighlightEnemyLords(false);
-                HighlightFormationCaptains(false);
-                HighlightArmyGeneral(false);
-                OnClearScene();
-            }
-        }
-
-        private void HighlightCompanions(bool show = true)
-        {
-            if (show == this._companionsHighlighted)
-                return;
-
-            if (AllHeroesAreVisibleInBattleMissionLogic.Instance == null || 
-                AllHeroesAreVisibleInBattleMissionLogic.Instance.MissionCompanionAgents == null || 
-                AllHeroesAreVisibleInBattleMissionLogic.Instance.MissionCompanionAgents.Count == 0)
-                return;
-
-            uint companionContourColor = new Color(0f, 0.85f, 0.1f, 1f).ToUnsignedInteger();
-
-            foreach (Agent agent in AllHeroesAreVisibleInBattleMissionLogic.Instance.MissionCompanionAgents)
-            {
-                if (agent != null && agent.IsActive())
-                {
-                    if (show)
-                    {
-                        if (Agent.Main != null && Agent.Main.IsActive())
-                        {
-                            if (Agent.Main.Position.Distance(agent.Position) < HighlightDistance)
-                            {
-                                if (agent.AgentVisuals != null)
-                                    agent.AgentVisuals.SetContourColor(new uint?(companionContourColor), true);
-                            }
-                        }
-                        else if (Agent.Main == null || !Agent.Main.IsActive())
-                        {
-                            if (agent.AgentVisuals != null)
-                                agent.AgentVisuals.SetContourColor(new uint?(companionContourColor), true);
-                        }
-                    }
-                    else if (agent != null)
-                    {
-                        if (agent.AgentVisuals != null)
-                            agent.AgentVisuals.SetContourColor(null, true);
-                    }
-                }
-            }
-            this._companionsHighlighted = show;
-        }
-
-        private void HighlightFriendlyLords(bool show = true)
-        {
-            if (show == this._friendlyLordsHighlighted)
-                return;
-
-            if (AllHeroesAreVisibleInBattleMissionLogic.Instance == null ||
-                AllHeroesAreVisibleInBattleMissionLogic.Instance.MissionFriendlyLordAgents == null ||
-                AllHeroesAreVisibleInBattleMissionLogic.Instance.MissionFriendlyLordAgents.Count == 0)
-                return;
-
-            uint focusedContourColor = new Color(1f, 1f, 0f, 1f).ToUnsignedInteger();
-
-            foreach (Agent agent in AllHeroesAreVisibleInBattleMissionLogic.Instance.MissionFriendlyLordAgents)
-            {
-                if (agent != null && agent.IsActive())
-                {
-                    if (show)
-                    {
-                        if (Agent.Main != null && Agent.Main.IsActive())
-                        {
-                            if (Agent.Main.Position.Distance(agent.Position) < HighlightDistance)
-                            {
-                                if (agent.AgentVisuals != null)
-                                    agent.AgentVisuals.SetContourColor(new uint?(focusedContourColor), true);
-                            }
-                        }
-                        else if (Agent.Main == null || !Agent.Main.IsActive())
-                        {
-                            if (agent.AgentVisuals != null)
-                                agent.AgentVisuals.SetContourColor(new uint?(focusedContourColor), true);
-                        }
-                    }
-                    else if (agent != null)
-                    {
-                        if (agent.AgentVisuals != null)
-                            agent.AgentVisuals.SetContourColor(null, true);
-                    }
-                }
-            }
-            this._friendlyLordsHighlighted = show;
-        }
-
-        private void HighlightEnemyLords(bool show = true)
-        {
-            if (show == this._enemyLordsHighlighted)
-                return;
-
-            if (AllHeroesAreVisibleInBattleMissionLogic.Instance == null || 
-                AllHeroesAreVisibleInBattleMissionLogic.Instance.MissionEnemyLordAgents == null || 
-                AllHeroesAreVisibleInBattleMissionLogic.Instance.MissionEnemyLordAgents.Count == 0)
-                return;
-
-            uint focusedContourColor = new Color(1f, 0f, 0f, 1f).ToUnsignedInteger();
-
-            foreach (Agent agent in AllHeroesAreVisibleInBattleMissionLogic.Instance.MissionEnemyLordAgents)
-            {
-                if (agent != null && agent.IsActive())
-                {
-                    if (show)
-                    {
-                        if (Agent.Main != null && Agent.Main.IsActive())
-                        {
-                            if (Agent.Main.Position.Distance(agent.Position) < HighlightDistance)
-                            {
-                                if (agent.AgentVisuals != null)
-                                    agent.AgentVisuals.SetContourColor(new uint?(focusedContourColor), true);
-                            }
-                        }
-                        else if (Agent.Main == null || !Agent.Main.IsActive())
-                        {
-                            if (agent.AgentVisuals != null)
-                                agent.AgentVisuals.SetContourColor(new uint?(focusedContourColor), true);
-                        }
-                    }
-                    else if (agent != null)
-                    {
-                        if (agent.AgentVisuals != null)
-                            agent.AgentVisuals.SetContourColor(null, true);
-                    }
-                }
-            }
-            this._enemyLordsHighlighted = show;
-        }
-
-        private void HighlightFormationCaptains(bool show = true)
-        {
-            if (show == this._formationCaptainsHighlighted)
-                return;
-
-            if (AllHeroesAreVisibleInBattleMissionLogic.Instance == null ||
-                AllHeroesAreVisibleInBattleMissionLogic.Instance?.MissionFormationCaptainAgents == null ||
-                AllHeroesAreVisibleInBattleMissionLogic.Instance.MissionFormationCaptainAgents.Count == 0)
-                return;
-
-            uint captainContourColor = new Color(0.2f, 0.4f, 1f, 1f).ToUnsignedInteger();
-
-            foreach (Agent agent in AllHeroesAreVisibleInBattleMissionLogic.Instance.MissionFormationCaptainAgents)
-            {
-                if (agent != null && agent.IsActive())
-                {
-                    if (show)
-                    {
-                        if (Agent.Main != null && Agent.Main.IsActive())
-                        {
-                            if (Agent.Main.Position.Distance(agent.Position) < HighlightDistance)
-                            {
-                                if (agent.AgentVisuals != null)
-                                    agent.AgentVisuals.SetContourColor(new uint?(captainContourColor), true);
-                            }
-                        }
-                        else if (Agent.Main == null || !Agent.Main.IsActive())
-                        {
-                            if (agent.AgentVisuals != null)
-                                agent.AgentVisuals.SetContourColor(new uint?(captainContourColor), true);
-                        }
-                    }
-                    else if (agent != null)
-                    {
-                        if (agent.AgentVisuals != null)
-                            agent.AgentVisuals.SetContourColor(null, true);
-                    }
-                }
-            }
-            this._formationCaptainsHighlighted = show;
-        }
-
-        private void HighlightArmyGeneral(bool show = true)
-        {
-            if (show == this._armyGeneralHighlighted)
-                return;
-
-            if (AllHeroesAreVisibleInBattleMissionLogic.Instance?.MissionArmyGeneralAgent == null)
-                return;
-
-            uint generalContourColor = new Color(0f, 1f, 1f, 1f).ToUnsignedInteger();
-
-            Agent? agent = AllHeroesAreVisibleInBattleMissionLogic.Instance?.MissionArmyGeneralAgent;
-
-            if (agent == null || agent.AgentVisuals == null)
-                return;
-
-            if (agent != null && agent.IsActive())
-            {
-                if (show)
-                {
-                    if (Agent.Main != null && Agent.Main.IsActive())
-                    {
-                        if (Agent.Main.Position.Distance(agent.Position) < HighlightDistance)
-                        {
-                            if (agent.AgentVisuals != null)
-                                agent.AgentVisuals.SetContourColor(new uint?(generalContourColor), true);
-                        }
-                    }
-                    else if (Agent.Main == null || !Agent.Main.IsActive())
-                    {
-                        if (agent.AgentVisuals != null)
-                            agent.AgentVisuals.SetContourColor(new uint?(generalContourColor), true);
-                    }
-                }
-                else if (agent != null)
-                {
-                    if (agent.AgentVisuals != null)
-                        agent.AgentVisuals.SetContourColor(null, true);
-                }
-            }
-            this._armyGeneralHighlighted = show;
+                ClearContours();
         }
 
         public override void OnAgentRemoved(Agent affectedAgent, Agent affectorAgent, AgentState agentState, KillingBlow blow)
         {
-            bool flag = base.Mission != null && base.Mission.Mode == MissionMode.Battle;
-            if (flag)
-            {
-                if (affectedAgent != null)
-                {
-                    MBAgentVisuals agentVisuals = affectedAgent.AgentVisuals;
-                    if (agentVisuals != null)
-                    {
-                        agentVisuals.SetContourColor(null, true);
-                    }
-                }
-            }
             base.OnAgentRemoved(affectedAgent, affectorAgent, agentState, blow);
+
+            if (affectedAgent == null)
+                return;
+
+            int index = _contouredAgents.IndexOf(affectedAgent);
+
+            if (index < 0)
+                return;
+
+            SetContour(affectedAgent, null);   // no IsActive() gate — State is already Killed/Unconscious here
+            _contouredAgents.RemoveAt(index);
+        }
+
+        public override void OnMissionScreenFinalize()
+        {
+            ClearContours();
+            base.OnMissionScreenFinalize();
         }
     }
 }
