@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Module xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
-        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/BUTR/Bannerlord.XmlSchemas/master/SubModule.xsd" >
+<Module>
   <Id value="$moduleid$" />
   <Name value="$modulename$" />
   <Version value="v$version$" />
@@ -9,6 +8,7 @@
   <ModuleType value="Community" />
   <Url value="$moduleurl$" />
   <DependedModules>
+    <DependedModule Id="Bannerlord.MBOptionScreen" Optional="true" DependentVersion="v5.12.3" />
     <DependedModule Id="Native" />
     <DependedModule Id="SandBoxCore" />
     <DependedModule Id="Sandbox" />
@@ -16,6 +16,7 @@
     <DependedModule Id="CustomBattle" />
   </DependedModules>
   <DependedModuleMetadatas>
+    <DependedModuleMetadata id="Bannerlord.MBOptionScreen" order="LoadBeforeThis" version="v5.12.3" optional="true" />
     <DependedModuleMetadata id="Native" order="LoadBeforeThis" />
     <DependedModuleMetadata id="SandBoxCore" order="LoadBeforeThis" />
     <DependedModuleMetadata id="Sandbox" order="LoadBeforeThis" />

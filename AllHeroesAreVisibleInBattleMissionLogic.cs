@@ -243,6 +243,14 @@ namespace AllHeroesAreVisibleInBattle
                 break;
             }
 
+            List<Team> teamsToScan = new List<Team>();
+
+            if (Mission.Current.PlayerTeam != null)
+                teamsToScan.Add(Mission.Current.PlayerTeam);
+
+            if (Mission.Current.PlayerAllyTeam != null)
+                teamsToScan.Add(Mission.Current.PlayerAllyTeam);
+
             if (ibCaptainList != null)
             {
                 // The list index is not a reliable team indicator, team membership is resolved per agent instead
@@ -261,18 +269,25 @@ namespace AllHeroesAreVisibleInBattle
                             TryAddFormationCaptain(captain);
                     }
                 }
+
+                // IB gave nothing for a formation — fall back to its real Formation.Captain (e.g. assigned by BattleBoosts)
+                foreach (Team team in teamsToScan)
+                {
+                    foreach (Formation formation in team.FormationsIncludingEmpty)
+                    {
+                        if (formation.CountOfUnits == 0)
+                            continue;
+
+                        Agent? captain = formation.Captain;
+
+                        if (captain != null && !this.MissionFormationCaptainAgents.Contains(captain))
+                            TryAddFormationCaptain(captain);
+                    }
+                }
             }
             else
             {
                 // ImmersiveBattlefields not present — fall back to scanning formations for hero agents
-                List<Team> teamsToScan = new List<Team>();
-
-                if (Mission.Current.PlayerTeam != null)
-                    teamsToScan.Add(Mission.Current.PlayerTeam);
-
-                if (Mission.Current.PlayerAllyTeam != null)
-                    teamsToScan.Add(Mission.Current.PlayerAllyTeam);
-
                 foreach (Team team in teamsToScan)
                 {
                     foreach (Formation formation in team.FormationsIncludingEmpty)
