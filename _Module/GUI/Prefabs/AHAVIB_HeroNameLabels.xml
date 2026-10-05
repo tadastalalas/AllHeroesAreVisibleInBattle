@@ -1,0 +1,22 @@
+﻿<Prefab>
+    <Window>
+        <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" IsVisible="@IsEnabled" DoNotAcceptEvents="true" DoNotPassEventsToChildren="true">
+            <Children>
+                <Widget DataSource="{Labels}" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" DoNotAcceptEvents="true">
+                    <ItemTemplate>
+                        <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" ScaledSuggestedWidth="400" ScaledSuggestedHeight="40"
+                                HorizontalAlignment="Left" VerticalAlignment="Top"
+                                ScaledPositionXOffset="@ScreenPositionX" ScaledPositionYOffset="@ScreenPositionY"
+                                IsVisible="@IsVisible" DoNotAcceptEvents="true">
+                            <Children>
+                                <TextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+                                            Brush="AHAVIB.HeroNameLabel.Text" Brush.TextHorizontalAlignment="Center" Brush.TextVerticalAlignment="Bottom"
+                                            Brush.FontColor="@Color" Text="@Name" />
+                            </Children>
+                        </Widget>
+                    </ItemTemplate>
+                </Widget>
+            </Children>
+        </Widget>
+    </Window>
+</Prefab>

@@ -14,13 +14,15 @@ namespace AllHeroesAreVisibleInBattle.Settings
         internal InputKey KeyboardKey { get; init; }
         internal InputKey ControllerKey { get; init; }
         internal float HighlightDistance { get; init; }
+        internal bool ShowNames { get; init; }
 
         internal static SettingsValues Default => new SettingsValues
         {
             Mode = HighlightModeType.Hold,
             KeyboardKey = InputKey.LeftAlt,
             ControllerKey = InputKey.Invalid,
-            HighlightDistance = 30f
+            HighlightDistance = 30f,
+            ShowNames = true
         };
     }
 }

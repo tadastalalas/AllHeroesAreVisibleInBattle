@@ -29,7 +29,8 @@ namespace AllHeroesAreVisibleInBattle.Settings
                     Mode = ReadMode(root, defaults.Mode),
                     KeyboardKey = ReadKey(root, "KeyboardKey", defaults.KeyboardKey),
                     ControllerKey = ReadKey(root, "ControllerKey", defaults.ControllerKey),
-                    HighlightDistance = ReadDistance(root, defaults.HighlightDistance)
+                    HighlightDistance = ReadDistance(root, defaults.HighlightDistance),
+                    ShowNames = ReadBool(root, "ShowNames", defaults.ShowNames)
                 };
             }
             catch (Exception exception) when (exception is IOException or UnauthorizedAccessException or System.Xml.XmlException)
@@ -77,6 +78,12 @@ namespace AllHeroesAreVisibleInBattle.Settings
                 return fallback;
 
             return TaleWorlds.Library.MathF.Min(TaleWorlds.Library.MathF.Max(distance, 10f), 200f);
+        }
+        
+        private static bool ReadBool(XElement root, string elementName, bool fallback)
+        {
+            string? value = root.Element(elementName)?.Value.Trim();
+            return string.IsNullOrEmpty(value) || !bool.TryParse(value, out bool result) ? fallback : result;
         }
     }
 }

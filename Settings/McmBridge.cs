@@ -59,7 +59,8 @@ namespace AllHeroesAreVisibleInBattle.Settings
                 Mode = settings.HighlightMode?.SelectedIndex == 1 ? HighlightModeType.Toggle : HighlightModeType.Hold,
                 KeyboardKey = settings.KeyboardKey?.SelectedValue?.Key ?? InputKey.Invalid,
                 ControllerKey = settings.ControllerKey?.SelectedValue?.Key ?? InputKey.Invalid,
-                HighlightDistance = settings.HighlightDistance
+                HighlightDistance = settings.HighlightDistance,
+                ShowNames = settings.ShowNames
             };
 
             return true;

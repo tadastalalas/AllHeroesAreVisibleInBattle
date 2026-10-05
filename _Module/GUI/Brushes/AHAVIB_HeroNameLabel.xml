@@ -1,0 +1,7 @@
+﻿<Brushes>
+    <Brush Name="AHAVIB.HeroNameLabel.Text" Font="Galahad" FontSize="24" TextHorizontalAlignment="Center" TextVerticalAlignment="Center">
+        <Styles>
+            <Style Name="Default" FontColor="#FFFFFFFF" TextOutlineColor="#000000FF" TextOutlineAmount="0.35" />
+        </Styles>
+    </Brush>
+</Brushes>

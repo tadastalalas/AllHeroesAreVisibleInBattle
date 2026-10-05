@@ -29,10 +29,15 @@
   HighlightDistance
     Heroes further than this many metres from the camera are not outlined.
     Allowed range: 10 - 200. Default: 30.
+    
+  ShowNames
+    true  - hero names are drawn above their heads while highlighted.
+    false - outlines only.
 -->
 <Config>
     <HighlightMode>Hold</HighlightMode>
     <KeyboardKey>LeftAlt</KeyboardKey>
     <ControllerKey>None</ControllerKey>
     <HighlightDistance>30</HighlightDistance>
+    <ShowNames>true</ShowNames>
 </Config>

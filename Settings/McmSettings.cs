@@ -29,5 +29,9 @@ namespace AllHeroesAreVisibleInBattle.Settings
         [SettingPropertyGroup("General")]
         [SettingPropertyInteger("Highlight Distance", 10, 200, "0 m", Order = 3, RequireRestart = false, HintText = "Heroes further than this from the camera are not outlined. Default 30.")]
         public int HighlightDistance { get; set; } = 30;
+        
+        [SettingPropertyGroup("General")]
+        [SettingPropertyBool("Show Names", Order = 4, RequireRestart = false, HintText = "Show the hero's name above their head while highlighted, in the same colour as the outline.")]
+        public bool ShowNames { get; set; } = true;
     }
 }

@@ -6,6 +6,8 @@ using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.View;
 using TaleWorlds.MountAndBlade.View.MissionViews;
+using TaleWorlds.Engine.GauntletUI;
+using AllHeroesAreVisibleInBattle.UI;
 using AllHeroesAreVisibleInBattle.Settings;
 
 namespace AllHeroesAreVisibleInBattle
@@ -13,20 +15,34 @@ namespace AllHeroesAreVisibleInBattle
     [DefaultView]
     public class AllHeroesAreVisibleInBattleMissionView : MissionView
     {
-        private static readonly uint CompanionColor    = new Color(0f, 0.85f, 0.1f, 1f).ToUnsignedInteger();
-        private static readonly uint FriendlyLordColor = new Color(1f, 1f, 0f, 1f).ToUnsignedInteger();
-        private static readonly uint EnemyLordColor    = new Color(1f, 0f, 0f, 1f).ToUnsignedInteger();
-        private static readonly uint CaptainColor      = new Color(0.2f, 0.4f, 1f, 1f).ToUnsignedInteger();
-        private static readonly uint GeneralColor      = new Color(0f, 1f, 1f, 1f).ToUnsignedInteger();
+        private static readonly uint CompanionColor    = new Color(0f, 0.85f, 0.1f).ToUnsignedInteger();
+        private static readonly uint FriendlyLordColor = new Color(1f, 1f, 0f).ToUnsignedInteger();
+        private static readonly uint EnemyLordColor    = new Color(1f, 0f, 0f).ToUnsignedInteger();
+        private static readonly uint CaptainColor      = new Color(0.2f, 0.4f, 1f).ToUnsignedInteger();
+        private static readonly uint GeneralColor      = new Color(0f, 1f, 1f).ToUnsignedInteger();
 
         private const float RefreshInterval = 0.25f;
 
-        private readonly List<Agent> _contouredAgents = new List<Agent>();
-        private readonly List<Agent> _desiredAgents = new List<Agent>();
-        private readonly List<uint> _desiredColors = new List<uint>();
+        private readonly List<Agent> _contouredAgents = [];
+        private readonly List<Agent> _desiredAgents = [];
+        private readonly List<uint> _desiredColors = [];
         private bool _highlightActive;
         private bool _toggledOn;
         private float _refreshTimer;
+        private const string CompanionHex = "#00D91AFF", FriendlyLordHex = "#FFFF00FF", EnemyLordHex = "#FF0000FF", CaptainHex = "#3366FFFF", GeneralHex = "#00FFFFFF";
+        private readonly List<string> _desiredColorHex = [];
+        private GauntletLayer? _layer;
+        private GauntletMovieIdentifier? _movie;
+        private HeroNameLabelsVM? _labelsVM;
+        
+        public override void OnMissionScreenInitialize()
+        {
+            base.OnMissionScreenInitialize();
+            _labelsVM = new HeroNameLabelsVM();
+            _layer = new GauntletLayer("AHAVIBHeroNameLabels", 1);
+            _movie = _layer.LoadMovie("AHAVIB_HeroNameLabels", _labelsVM);
+            MissionScreen.AddLayer(_layer);
+        }
         
         public override void OnMissionScreenTick(float dt)
         {
@@ -67,12 +83,26 @@ namespace AllHeroesAreVisibleInBattle
 
             _refreshTimer -= dt;
 
-            if (_highlightActive && _refreshTimer > 0f)
+            if (!_highlightActive || _refreshTimer <= 0f)
+            {
+                _refreshTimer = RefreshInterval;
+                RefreshContours(settings.HighlightDistance * settings.HighlightDistance);
+                _highlightActive = true;
+            }
+
+            if (_labelsVM == null || _layer == null)
                 return;
 
-            _refreshTimer = RefreshInterval;
-            RefreshContours(settings.HighlightDistance * settings.HighlightDistance);
-            _highlightActive = true;
+            if (!settings.ShowNames)
+            {
+                if (_labelsVM.IsEnabled)
+                    _labelsVM.Clear();
+
+                return;
+            }
+
+            _labelsVM.IsEnabled = true;
+            _labelsVM.UpdatePositions(MissionScreen.CombatCamera);
         }
 
         private static bool IsKeyDown(InputKey key) => key != InputKey.Invalid && TaleWorlds.InputSystem.Input.IsKeyDown(key);
@@ -85,6 +115,7 @@ namespace AllHeroesAreVisibleInBattle
 
             _desiredAgents.Clear();
             _desiredColors.Clear();
+            _desiredColorHex.Clear();
 
             if (logic != null)
             {
@@ -115,6 +146,9 @@ namespace AllHeroesAreVisibleInBattle
                 if (!_contouredAgents.Contains(agent))
                     _contouredAgents.Add(agent);
             }
+            
+            if (ModSettings.Current.ShowNames)
+                _labelsVM?.Sync(_desiredAgents, _desiredColorHex);
         }
 
         // The render camera position works with any camera mod (RTS Camera, photo mode, spectator).
@@ -125,7 +159,7 @@ namespace AllHeroesAreVisibleInBattle
             if (scene != null)
                 return scene.LastFinalRenderCameraPosition;
 
-            return Agent.Main != null ? Agent.Main.Position : (Vec3?)null;
+            return Agent.Main != null ? Agent.Main.Position : null;
         }
 
         private void CollectAgents(List<Agent> agents, uint color, Vec3? origin, float distanceSquared)
@@ -147,14 +181,21 @@ namespace AllHeroesAreVisibleInBattle
 
             _desiredAgents.Add(agent);
             _desiredColors.Add(color);
+            _desiredColorHex.Add(ColorHex(color));
         }
+        
+        private static string ColorHex(uint c) =>
+            c == CompanionColor ? CompanionHex :
+            c == FriendlyLordColor ? FriendlyLordHex :
+            c == EnemyLordColor ? EnemyLordHex :
+            c == CaptainColor ? CaptainHex : GeneralHex;
 
         private static void SetContour(Agent agent, uint? color)
         {
             MBAgentVisuals visuals = agent.AgentVisuals;
 
             if (visuals != null && visuals.IsValid())
-                visuals.SetContourColor(color, true);
+                visuals.SetContourColor(color);
         }
 
         private void ClearContours()
@@ -162,6 +203,7 @@ namespace AllHeroesAreVisibleInBattle
             for (int i = 0; i < _contouredAgents.Count; i++)
                 SetContour(_contouredAgents[i], null);
 
+            _labelsVM?.Clear();
             _contouredAgents.Clear();
             _highlightActive = false;
             _toggledOn = false;
@@ -195,6 +237,13 @@ namespace AllHeroesAreVisibleInBattle
         public override void OnMissionScreenFinalize()
         {
             ClearContours();
+            if (_layer != null)
+            {
+                if (_movie != null) _layer.ReleaseMovie(_movie);
+                MissionScreen.RemoveLayer(_layer);
+            }
+            _labelsVM?.OnFinalize();
+            _layer = null; _movie = null; _labelsVM = null;
             base.OnMissionScreenFinalize();
         }
     }
