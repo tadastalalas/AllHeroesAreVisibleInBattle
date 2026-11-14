@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
-  All Heroes Are Visible In Battle - fallback configuration.
+  All Heroes Are Visible In Battle - configuration.
 
   This file is ONLY used when Mod Configuration Menu (MCM) is NOT installed.
   With MCM installed, use: Options -> Mod Options -> All Heroes Are Visible In Battle.
@@ -28,16 +28,27 @@
 
   HighlightDistance
     Heroes further than this many metres from the camera are not outlined.
-    Allowed range: 10 - 200. Default: 30.
-    
+    Whole number, allowed range: 10 - 200. Default: 30.
+
   ShowNames
     true  - hero names are drawn above their heads while highlighted.
     false - outlines only.
+
+  LoggingEnabled
+    true  - writes debug lines to Modules\AllHeroesAreVisibleInBattle\logs\ (English only).
+    false - only problems are written there. Default: false.
+
+  If this file is missing or broken, the mod recreates it with the default settings.
 -->
-<Config>
-    <HighlightMode>Hold</HighlightMode>
-    <KeyboardKey>LeftAlt</KeyboardKey>
-    <ControllerKey>None</ControllerKey>
-    <HighlightDistance>30</HighlightDistance>
-    <ShowNames>true</ShowNames>
-</Config>
+<ModConfiguration>
+    <General>
+        <HighlightMode>Hold</HighlightMode>
+        <KeyboardKey>LeftAlt</KeyboardKey>
+        <ControllerKey>None</ControllerKey>
+        <HighlightDistance>30</HighlightDistance>
+        <ShowNames>true</ShowNames>
+    </General>
+    <TechnicalSettings>
+        <LoggingEnabled>false</LoggingEnabled>
+    </TechnicalSettings>
+</ModConfiguration>

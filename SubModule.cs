@@ -1,24 +1,25 @@
-﻿using AllHeroesAreVisibleInBattle.Settings;
+using AllHeroesAreVisibleInBattle.Core;
+using AllHeroesAreVisibleInBattle.Missions;
+using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
 
-namespace AllHeroesAreVisibleInBattle
+namespace AllHeroesAreVisibleInBattle;
+
+public class SubModule : MBSubModuleBase
 {
-    public class SubModule : MBSubModuleBase
+    protected override void OnGameStart(Game game, IGameStarter gameStarterObject)
     {
-           protected override void OnBeforeInitialModuleScreenSetAsRoot()
-           {
-                   base.OnBeforeInitialModuleScreenSetAsRoot();
-                   ModSettings.Initialize();
-           }
-        
-        public override void OnMissionBehaviorInitialize(Mission mission)
-        {
-            base.OnMissionBehaviorInitialize(mission);
+        base.OnGameStart(game, gameStarterObject);
+        ModSettings.Reload();
+    }
 
-            if (mission == null)
-                return;
+    public override void OnMissionBehaviorInitialize(Mission mission)
+    {
+        base.OnMissionBehaviorInitialize(mission);
 
-            mission.AddMissionBehavior(new AllHeroesAreVisibleInBattleMissionLogic());
-        }
+        if (mission == null)
+            return;
+
+        mission.AddMissionBehavior(new AllHeroesAreVisibleInBattleMissionLogic());
     }
 }

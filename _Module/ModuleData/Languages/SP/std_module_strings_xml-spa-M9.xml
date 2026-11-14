@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+	<tags>
+		<tag language="Español (LA)" />
+	</tags>
+	<strings>
+		<string id="AHAVIB_XGHAHVA" text="Todos los héroes son visibles en batalla" />
+		<string id="AHAVIB_qhfqjNf" text="General" />
+		<string id="AHAVIB_IGpDb3w" text="Modo de resaltado" />
+		<string id="AHAVIB_mpbOfUj" text="Mantener: resalta solo mientras se mantiene pulsada la tecla. Alternar: pulsa una vez para activar y otra vez para desactivar." />
+		<string id="AHAVIB_MD2uxJv" text="Mantener" />
+		<string id="AHAVIB_rXGdKCl" text="Alternar" />
+		<string id="AHAVIB_9U5WAxT" text="Tecla del teclado" />
+		<string id="AHAVIB_TRmYzya" text="Tecla del teclado / ratón que activa el resaltado. Funciona a la vez que el botón del mando." />
+		<string id="AHAVIB_Z0Sthax" text="Botón del mando" />
+		<string id="AHAVIB_Hr08eFW" text="Botón del mando que activa el resaltado. Por defecto es Ninguno, para evitar conflictos con los controles de combate originales." />
+		<string id="AHAVIB_G8b0Yhl" text="Distancia de resaltado" />
+		<string id="AHAVIB_pXZG4OQ" text="Los héroes más alejados de la cámara que esta distancia no reciben contorno. Por defecto: 30." />
+		<string id="AHAVIB_M8hnjkJ" text="Mostrar nombres" />
+		<string id="AHAVIB_DBOWj8p" text="Muestra el nombre del héroe sobre su cabeza mientras está resaltado, del mismo color que el contorno." />
+		<string id="AHAVIB_4Mz1FTK" text="Configuraciones técnicas" />
+		<string id="AHAVIB_Eusi1Fl" text="Registro para depuración" />
+		<string id="AHAVIB_qG1M3vg" text="Registro para depuración (solo en inglés). [Predeterminado: desactivado]" />
+		<string id="AHAVIB_By7fwJl" text="Ninguno" />
+		<string id="AHAVIB_TaVU9w0" text="Alt izquierdo" />
+		<string id="AHAVIB_KjnHnX8" text="Alt derecho" />
+		<string id="AHAVIB_DgHXJbV" text="Ctrl izquierdo" />
+		<string id="AHAVIB_9HQF37j" text="Ctrl derecho" />
+		<string id="AHAVIB_Pr5t93m" text="Mayús izquierdo" />
+		<string id="AHAVIB_2vBNAO3" text="Mayús derecho" />
+		<string id="AHAVIB_GSOIStK" text="Bloq Mayús" />
+		<string id="AHAVIB_uuLi3dv" text="Virgulilla (~)" />
+		<string id="AHAVIB_SlH069C" text="Espacio" />
+		<string id="AHAVIB_Dbw36Du" text="Botón central del ratón" />
+		<string id="AHAVIB_harmWn3" text="Botón 4 del ratón" />
+		<string id="AHAVIB_o7wElX9" text="Botón 5 del ratón" />
+		<string id="AHAVIB_S46ybFf" text="Bumper izquierdo (LB)" />
+		<string id="AHAVIB_OGVyJgI" text="Bumper derecho (RB)" />
+		<string id="AHAVIB_XGdRCo0" text="Gatillo izquierdo (LT)" />
+		<string id="AHAVIB_QyyVpW6" text="Gatillo derecho (RT)" />
+		<string id="AHAVIB_K8jcDhg" text="Pulsar stick izquierdo (L3)" />
+		<string id="AHAVIB_pWE4Cv4" text="Pulsar stick derecho (R3)" />
+		<string id="AHAVIB_fjBAPdL" text="Vista / Atrás" />
+		<string id="AHAVIB_d5tuuHv" text="Menú / Inicio" />
+		<string id="AHAVIB_kJfinXP" text="Cruceta arriba" />
+		<string id="AHAVIB_YRWSWqS" text="Cruceta abajo" />
+		<string id="AHAVIB_I2B3vV3" text="Cruceta izquierda" />
+		<string id="AHAVIB_A4aYmze" text="Cruceta derecha" />
+		<string id="AHAVIB_GE95O2m" text="Botón superior (Y)" />
+		<string id="AHAVIB_Jt8H37Y" text="Botón inferior (A)" />
+		<string id="AHAVIB_12gprT8" text="Botón izquierdo (X)" />
+		<string id="AHAVIB_BKKaO0D" text="Botón derecho (B)" />
+	</strings>
+</base>

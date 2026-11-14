@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+	<tags>
+		<tag language="Polski" />
+	</tags>
+	<strings>
+		<string id="AHAVIB_XGHAHVA" text="Wszyscy bohaterowie widoczni w bitwie" />
+		<string id="AHAVIB_qhfqjNf" text="Ogólne" />
+		<string id="AHAVIB_IGpDb3w" text="Tryb podświetlania" />
+		<string id="AHAVIB_mpbOfUj" text="Przytrzymaj: podświetla tylko podczas trzymania klawisza. Przełącz: naciśnij raz, aby włączyć, i ponownie, aby wyłączyć." />
+		<string id="AHAVIB_MD2uxJv" text="Przytrzymaj" />
+		<string id="AHAVIB_rXGdKCl" text="Przełącz" />
+		<string id="AHAVIB_9U5WAxT" text="Klawisz klawiatury" />
+		<string id="AHAVIB_TRmYzya" text="Klawisz klawiatury / myszy, który włącza podświetlenie. Działa jednocześnie z przyciskiem kontrolera." />
+		<string id="AHAVIB_Z0Sthax" text="Przycisk kontrolera" />
+		<string id="AHAVIB_Hr08eFW" text="Przycisk kontrolera, który włącza podświetlenie. Domyślnie Brak, aby uniknąć konfliktu z oryginalnym sterowaniem w walce." />
+		<string id="AHAVIB_G8b0Yhl" text="Zasięg podświetlania" />
+		<string id="AHAVIB_pXZG4OQ" text="Bohaterowie znajdujący się dalej od kamery niż ta odległość nie są obrysowywani. Domyślnie: 30." />
+		<string id="AHAVIB_M8hnjkJ" text="Pokaż imiona" />
+		<string id="AHAVIB_DBOWj8p" text="Pokazuje imię bohatera nad jego głową podczas podświetlenia, w tym samym kolorze co obrys." />
+		<string id="AHAVIB_4Mz1FTK" text="Ustawienia techniczne" />
+		<string id="AHAVIB_Eusi1Fl" text="Rejestrowanie do debugowania" />
+		<string id="AHAVIB_qG1M3vg" text="Rejestrowanie do debugowania (tylko w języku angielskim). [Domyślnie: wyłączone]" />
+		<string id="AHAVIB_By7fwJl" text="Brak" />
+		<string id="AHAVIB_TaVU9w0" text="Lewy Alt" />
+		<string id="AHAVIB_KjnHnX8" text="Prawy Alt" />
+		<string id="AHAVIB_DgHXJbV" text="Lewy Ctrl" />
+		<string id="AHAVIB_9HQF37j" text="Prawy Ctrl" />
+		<string id="AHAVIB_Pr5t93m" text="Lewy Shift" />
+		<string id="AHAVIB_2vBNAO3" text="Prawy Shift" />
+		<string id="AHAVIB_GSOIStK" text="Caps Lock" />
+		<string id="AHAVIB_uuLi3dv" text="Tylda (~)" />
+		<string id="AHAVIB_SlH069C" text="Spacja" />
+		<string id="AHAVIB_Dbw36Du" text="Środkowy przycisk myszy" />
+		<string id="AHAVIB_harmWn3" text="Przycisk myszy 4" />
+		<string id="AHAVIB_o7wElX9" text="Przycisk myszy 5" />
+		<string id="AHAVIB_S46ybFf" text="Lewy bumper (LB)" />
+		<string id="AHAVIB_OGVyJgI" text="Prawy bumper (RB)" />
+		<string id="AHAVIB_XGdRCo0" text="Lewy spust (LT)" />
+		<string id="AHAVIB_QyyVpW6" text="Prawy spust (RT)" />
+		<string id="AHAVIB_K8jcDhg" text="Wciśnięcie lewej gałki (L3)" />
+		<string id="AHAVIB_pWE4Cv4" text="Wciśnięcie prawej gałki (R3)" />
+		<string id="AHAVIB_fjBAPdL" text="Widok / Wstecz" />
+		<string id="AHAVIB_d5tuuHv" text="Menu / Start" />
+		<string id="AHAVIB_kJfinXP" text="Krzyżak w górę" />
+		<string id="AHAVIB_YRWSWqS" text="Krzyżak w dół" />
+		<string id="AHAVIB_I2B3vV3" text="Krzyżak w lewo" />
+		<string id="AHAVIB_A4aYmze" text="Krzyżak w prawo" />
+		<string id="AHAVIB_GE95O2m" text="Górny przycisk (Y)" />
+		<string id="AHAVIB_Jt8H37Y" text="Dolny przycisk (A)" />
+		<string id="AHAVIB_12gprT8" text="Lewy przycisk (X)" />
+		<string id="AHAVIB_BKKaO0D" text="Prawy przycisk (B)" />
+	</strings>
+</base>

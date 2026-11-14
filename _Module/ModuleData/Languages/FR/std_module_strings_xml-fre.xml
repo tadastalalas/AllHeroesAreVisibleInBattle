@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+	<tags>
+		<tag language="Français" />
+	</tags>
+	<strings>
+		<string id="AHAVIB_XGHAHVA" text="Tous les héros sont visibles en bataille" />
+		<string id="AHAVIB_qhfqjNf" text="Général" />
+		<string id="AHAVIB_IGpDb3w" text="Mode de surbrillance" />
+		<string id="AHAVIB_mpbOfUj" text="Maintenir : surbrillance uniquement tant que la touche est maintenue. Basculer : appuyez une fois pour activer, puis à nouveau pour désactiver." />
+		<string id="AHAVIB_MD2uxJv" text="Maintenir" />
+		<string id="AHAVIB_rXGdKCl" text="Basculer" />
+		<string id="AHAVIB_9U5WAxT" text="Touche du clavier" />
+		<string id="AHAVIB_TRmYzya" text="Touche du clavier / de la souris qui déclenche la surbrillance. Fonctionne en même temps que le bouton de la manette." />
+		<string id="AHAVIB_Z0Sthax" text="Bouton de la manette" />
+		<string id="AHAVIB_Hr08eFW" text="Bouton de la manette qui déclenche la surbrillance. Par défaut : Aucun, pour éviter les conflits avec les commandes de combat d'origine." />
+		<string id="AHAVIB_G8b0Yhl" text="Distance de surbrillance" />
+		<string id="AHAVIB_pXZG4OQ" text="Les héros plus éloignés de la caméra que cette distance ne reçoivent pas de contour. Par défaut : 30." />
+		<string id="AHAVIB_M8hnjkJ" text="Afficher les noms" />
+		<string id="AHAVIB_DBOWj8p" text="Affiche le nom du héros au-dessus de sa tête pendant la surbrillance, de la même couleur que le contour." />
+		<string id="AHAVIB_4Mz1FTK" text="Paramètres techniques" />
+		<string id="AHAVIB_Eusi1Fl" text="Journalisation pour le débogage" />
+		<string id="AHAVIB_qG1M3vg" text="Journalisation pour le débogage (anglais uniquement). [Par défaut : désactivé]" />
+		<string id="AHAVIB_By7fwJl" text="Aucun" />
+		<string id="AHAVIB_TaVU9w0" text="Alt gauche" />
+		<string id="AHAVIB_KjnHnX8" text="Alt droit" />
+		<string id="AHAVIB_DgHXJbV" text="Ctrl gauche" />
+		<string id="AHAVIB_9HQF37j" text="Ctrl droit" />
+		<string id="AHAVIB_Pr5t93m" text="Maj gauche" />
+		<string id="AHAVIB_2vBNAO3" text="Maj droit" />
+		<string id="AHAVIB_GSOIStK" text="Verr. Maj" />
+		<string id="AHAVIB_uuLi3dv" text="Tilde (~)" />
+		<string id="AHAVIB_SlH069C" text="Espace" />
+		<string id="AHAVIB_Dbw36Du" text="Bouton central de la souris" />
+		<string id="AHAVIB_harmWn3" text="Bouton 4 de la souris" />
+		<string id="AHAVIB_o7wElX9" text="Bouton 5 de la souris" />
+		<string id="AHAVIB_S46ybFf" text="Bouton supérieur gauche (LB)" />
+		<string id="AHAVIB_OGVyJgI" text="Bouton supérieur droit (RB)" />
+		<string id="AHAVIB_XGdRCo0" text="Gâchette gauche (LT)" />
+		<string id="AHAVIB_QyyVpW6" text="Gâchette droite (RT)" />
+		<string id="AHAVIB_K8jcDhg" text="Clic du stick gauche (L3)" />
+		<string id="AHAVIB_pWE4Cv4" text="Clic du stick droit (R3)" />
+		<string id="AHAVIB_fjBAPdL" text="Affichage / Retour" />
+		<string id="AHAVIB_d5tuuHv" text="Menu / Start" />
+		<string id="AHAVIB_kJfinXP" text="Croix directionnelle haut" />
+		<string id="AHAVIB_YRWSWqS" text="Croix directionnelle bas" />
+		<string id="AHAVIB_I2B3vV3" text="Croix directionnelle gauche" />
+		<string id="AHAVIB_A4aYmze" text="Croix directionnelle droite" />
+		<string id="AHAVIB_GE95O2m" text="Bouton du haut (Y)" />
+		<string id="AHAVIB_Jt8H37Y" text="Bouton du bas (A)" />
+		<string id="AHAVIB_12gprT8" text="Bouton de gauche (X)" />
+		<string id="AHAVIB_BKKaO0D" text="Bouton de droite (B)" />
+	</strings>
+</base>

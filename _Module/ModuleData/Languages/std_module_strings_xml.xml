@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+	<tags>
+		<tag language="English" />
+	</tags>
+	<strings>
+		<string id="AHAVIB_XGHAHVA" text="All Heroes Are Visible In Battle" />
+		<string id="AHAVIB_qhfqjNf" text="General" />
+		<string id="AHAVIB_IGpDb3w" text="Highlight Mode" />
+		<string id="AHAVIB_mpbOfUj" text="Hold: highlights only while the key is held. Toggle: press once to turn on, press again to turn off." />
+		<string id="AHAVIB_MD2uxJv" text="Hold" />
+		<string id="AHAVIB_rXGdKCl" text="Toggle" />
+		<string id="AHAVIB_9U5WAxT" text="Keyboard Key" />
+		<string id="AHAVIB_TRmYzya" text="Keyboard / mouse key that triggers the highlight. Works at the same time as the controller button." />
+		<string id="AHAVIB_Z0Sthax" text="Controller Button" />
+		<string id="AHAVIB_Hr08eFW" text="Controller button that triggers the highlight. Default is None to avoid clashing with vanilla combat bindings." />
+		<string id="AHAVIB_G8b0Yhl" text="Highlight Distance" />
+		<string id="AHAVIB_pXZG4OQ" text="Heroes further than this from the camera are not outlined. Default 30." />
+		<string id="AHAVIB_M8hnjkJ" text="Show Names" />
+		<string id="AHAVIB_DBOWj8p" text="Show the hero's name above their head while highlighted, in the same colour as the outline." />
+		<string id="AHAVIB_4Mz1FTK" text="Technical settings" />
+		<string id="AHAVIB_Eusi1Fl" text="Logging for debugging" />
+		<string id="AHAVIB_qG1M3vg" text="Logging for debugging (English only). [Default: disabled]" />
+		<string id="AHAVIB_By7fwJl" text="None" />
+		<string id="AHAVIB_TaVU9w0" text="Left Alt" />
+		<string id="AHAVIB_KjnHnX8" text="Right Alt" />
+		<string id="AHAVIB_DgHXJbV" text="Left Ctrl" />
+		<string id="AHAVIB_9HQF37j" text="Right Ctrl" />
+		<string id="AHAVIB_Pr5t93m" text="Left Shift" />
+		<string id="AHAVIB_2vBNAO3" text="Right Shift" />
+		<string id="AHAVIB_GSOIStK" text="Caps Lock" />
+		<string id="AHAVIB_uuLi3dv" text="Tilde (~)" />
+		<string id="AHAVIB_SlH069C" text="Space" />
+		<string id="AHAVIB_Dbw36Du" text="Middle Mouse Button" />
+		<string id="AHAVIB_harmWn3" text="Mouse Button 4" />
+		<string id="AHAVIB_o7wElX9" text="Mouse Button 5" />
+		<string id="AHAVIB_S46ybFf" text="Left Bumper (LB)" />
+		<string id="AHAVIB_OGVyJgI" text="Right Bumper (RB)" />
+		<string id="AHAVIB_XGdRCo0" text="Left Trigger (LT)" />
+		<string id="AHAVIB_QyyVpW6" text="Right Trigger (RT)" />
+		<string id="AHAVIB_K8jcDhg" text="Left Stick Click (L3)" />
+		<string id="AHAVIB_pWE4Cv4" text="Right Stick Click (R3)" />
+		<string id="AHAVIB_fjBAPdL" text="View / Back" />
+		<string id="AHAVIB_d5tuuHv" text="Menu / Start" />
+		<string id="AHAVIB_kJfinXP" text="D-Pad Up" />
+		<string id="AHAVIB_YRWSWqS" text="D-Pad Down" />
+		<string id="AHAVIB_I2B3vV3" text="D-Pad Left" />
+		<string id="AHAVIB_A4aYmze" text="D-Pad Right" />
+		<string id="AHAVIB_GE95O2m" text="Face Up (Y)" />
+		<string id="AHAVIB_Jt8H37Y" text="Face Down (A)" />
+		<string id="AHAVIB_12gprT8" text="Face Left (X)" />
+		<string id="AHAVIB_BKKaO0D" text="Face Right (B)" />
+	</strings>
+</base>

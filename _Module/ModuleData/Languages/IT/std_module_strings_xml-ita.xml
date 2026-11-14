@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+	<tags>
+		<tag language="Italiano" />
+	</tags>
+	<strings>
+		<string id="AHAVIB_XGHAHVA" text="Tutti gli eroi sono visibili in battaglia" />
+		<string id="AHAVIB_qhfqjNf" text="Generale" />
+		<string id="AHAVIB_IGpDb3w" text="Modalità evidenziazione" />
+		<string id="AHAVIB_mpbOfUj" text="Tieni premuto: evidenzia solo mentre il tasto è premuto. Attiva/disattiva: premi una volta per attivare, premi di nuovo per disattivare." />
+		<string id="AHAVIB_MD2uxJv" text="Tieni premuto" />
+		<string id="AHAVIB_rXGdKCl" text="Attiva/disattiva" />
+		<string id="AHAVIB_9U5WAxT" text="Tasto della tastiera" />
+		<string id="AHAVIB_TRmYzya" text="Tasto della tastiera / del mouse che attiva l'evidenziazione. Funziona insieme al pulsante del controller." />
+		<string id="AHAVIB_Z0Sthax" text="Pulsante del controller" />
+		<string id="AHAVIB_Hr08eFW" text="Pulsante del controller che attiva l'evidenziazione. Il valore predefinito è Nessuno, per evitare conflitti con i comandi di combattimento originali." />
+		<string id="AHAVIB_G8b0Yhl" text="Distanza di evidenziazione" />
+		<string id="AHAVIB_pXZG4OQ" text="Gli eroi più lontani dalla telecamera di questa distanza non vengono contornati. Predefinito: 30." />
+		<string id="AHAVIB_M8hnjkJ" text="Mostra nomi" />
+		<string id="AHAVIB_DBOWj8p" text="Mostra il nome dell'eroe sopra la sua testa mentre è evidenziato, nello stesso colore del contorno." />
+		<string id="AHAVIB_4Mz1FTK" text="Impostazioni tecniche" />
+		<string id="AHAVIB_Eusi1Fl" text="Registrazione per il debug" />
+		<string id="AHAVIB_qG1M3vg" text="Registrazione per il debug (solo in inglese). [Predefinito: disabilitato]" />
+		<string id="AHAVIB_By7fwJl" text="Nessuno" />
+		<string id="AHAVIB_TaVU9w0" text="Alt sinistro" />
+		<string id="AHAVIB_KjnHnX8" text="Alt destro" />
+		<string id="AHAVIB_DgHXJbV" text="Ctrl sinistro" />
+		<string id="AHAVIB_9HQF37j" text="Ctrl destro" />
+		<string id="AHAVIB_Pr5t93m" text="Maiusc sinistro" />
+		<string id="AHAVIB_2vBNAO3" text="Maiusc destro" />
+		<string id="AHAVIB_GSOIStK" text="Bloc Maiusc" />
+		<string id="AHAVIB_uuLi3dv" text="Tilde (~)" />
+		<string id="AHAVIB_SlH069C" text="Spazio" />
+		<string id="AHAVIB_Dbw36Du" text="Pulsante centrale del mouse" />
+		<string id="AHAVIB_harmWn3" text="Pulsante 4 del mouse" />
+		<string id="AHAVIB_o7wElX9" text="Pulsante 5 del mouse" />
+		<string id="AHAVIB_S46ybFf" text="Dorsale sinistro (LB)" />
+		<string id="AHAVIB_OGVyJgI" text="Dorsale destro (RB)" />
+		<string id="AHAVIB_XGdRCo0" text="Grilletto sinistro (LT)" />
+		<string id="AHAVIB_QyyVpW6" text="Grilletto destro (RT)" />
+		<string id="AHAVIB_K8jcDhg" text="Clic levetta sinistra (L3)" />
+		<string id="AHAVIB_pWE4Cv4" text="Clic levetta destra (R3)" />
+		<string id="AHAVIB_fjBAPdL" text="Visualizza / Indietro" />
+		<string id="AHAVIB_d5tuuHv" text="Menu / Start" />
+		<string id="AHAVIB_kJfinXP" text="Croce direzionale su" />
+		<string id="AHAVIB_YRWSWqS" text="Croce direzionale giù" />
+		<string id="AHAVIB_I2B3vV3" text="Croce direzionale sinistra" />
+		<string id="AHAVIB_A4aYmze" text="Croce direzionale destra" />
+		<string id="AHAVIB_GE95O2m" text="Pulsante superiore (Y)" />
+		<string id="AHAVIB_Jt8H37Y" text="Pulsante inferiore (A)" />
+		<string id="AHAVIB_12gprT8" text="Pulsante sinistro (X)" />
+		<string id="AHAVIB_BKKaO0D" text="Pulsante destro (B)" />
+	</strings>
+</base>

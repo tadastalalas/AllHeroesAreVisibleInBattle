@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+	<tags>
+		<tag language="繁體中文" />
+	</tags>
+	<strings>
+		<string id="AHAVIB_XGHAHVA" text="戰場上所有英雄皆可見" />
+		<string id="AHAVIB_qhfqjNf" text="一般" />
+		<string id="AHAVIB_IGpDb3w" text="高亮模式" />
+		<string id="AHAVIB_mpbOfUj" text="按住：僅在按住按鍵時高亮。切換：按一次開啟，再按一次關閉。" />
+		<string id="AHAVIB_MD2uxJv" text="按住" />
+		<string id="AHAVIB_rXGdKCl" text="切換" />
+		<string id="AHAVIB_9U5WAxT" text="鍵盤按鍵" />
+		<string id="AHAVIB_TRmYzya" text="觸發高亮的鍵盤/滑鼠按鍵。可與手把按鍵同時使用。" />
+		<string id="AHAVIB_Z0Sthax" text="手把按鍵" />
+		<string id="AHAVIB_Hr08eFW" text="觸發高亮的手把按鍵。預設為「無」，以避免與原版戰鬥按鍵衝突。" />
+		<string id="AHAVIB_G8b0Yhl" text="高亮距離" />
+		<string id="AHAVIB_pXZG4OQ" text="距離鏡頭超過此值的英雄不會顯示輪廓。預設 30。" />
+		<string id="AHAVIB_M8hnjkJ" text="顯示名字" />
+		<string id="AHAVIB_DBOWj8p" text="高亮時在英雄頭頂顯示其名字，顏色與輪廓相同。" />
+		<string id="AHAVIB_4Mz1FTK" text="技術設定" />
+		<string id="AHAVIB_Eusi1Fl" text="除錯日誌" />
+		<string id="AHAVIB_qG1M3vg" text="除錯日誌（僅限英文）。[ 預設：停用 ]" />
+		<string id="AHAVIB_By7fwJl" text="無" />
+		<string id="AHAVIB_TaVU9w0" text="左 Alt" />
+		<string id="AHAVIB_KjnHnX8" text="右 Alt" />
+		<string id="AHAVIB_DgHXJbV" text="左 Ctrl" />
+		<string id="AHAVIB_9HQF37j" text="右 Ctrl" />
+		<string id="AHAVIB_Pr5t93m" text="左 Shift" />
+		<string id="AHAVIB_2vBNAO3" text="右 Shift" />
+		<string id="AHAVIB_GSOIStK" text="大寫鎖定鍵" />
+		<string id="AHAVIB_uuLi3dv" text="波浪鍵 (~)" />
+		<string id="AHAVIB_SlH069C" text="空白鍵" />
+		<string id="AHAVIB_Dbw36Du" text="滑鼠中鍵" />
+		<string id="AHAVIB_harmWn3" text="滑鼠按鍵 4" />
+		<string id="AHAVIB_o7wElX9" text="滑鼠按鍵 5" />
+		<string id="AHAVIB_S46ybFf" text="左肩鍵 (LB)" />
+		<string id="AHAVIB_OGVyJgI" text="右肩鍵 (RB)" />
+		<string id="AHAVIB_XGdRCo0" text="左扳機鍵 (LT)" />
+		<string id="AHAVIB_QyyVpW6" text="右扳機鍵 (RT)" />
+		<string id="AHAVIB_K8jcDhg" text="按下左搖桿 (L3)" />
+		<string id="AHAVIB_pWE4Cv4" text="按下右搖桿 (R3)" />
+		<string id="AHAVIB_fjBAPdL" text="檢視 / 返回" />
+		<string id="AHAVIB_d5tuuHv" text="選單 / 開始" />
+		<string id="AHAVIB_kJfinXP" text="方向鍵上" />
+		<string id="AHAVIB_YRWSWqS" text="方向鍵下" />
+		<string id="AHAVIB_I2B3vV3" text="方向鍵左" />
+		<string id="AHAVIB_A4aYmze" text="方向鍵右" />
+		<string id="AHAVIB_GE95O2m" text="上方按鍵 (Y)" />
+		<string id="AHAVIB_Jt8H37Y" text="下方按鍵 (A)" />
+		<string id="AHAVIB_12gprT8" text="左側按鍵 (X)" />
+		<string id="AHAVIB_BKKaO0D" text="右側按鍵 (B)" />
+	</strings>
+</base>

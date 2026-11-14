@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+	<tags>
+		<tag language="한국어" />
+	</tags>
+	<strings>
+		<string id="AHAVIB_XGHAHVA" text="전투에서 모든 영웅이 보입니다" />
+		<string id="AHAVIB_qhfqjNf" text="일반" />
+		<string id="AHAVIB_IGpDb3w" text="강조 모드" />
+		<string id="AHAVIB_mpbOfUj" text="누르기: 키를 누르고 있는 동안에만 강조합니다. 전환: 한 번 누르면 켜지고, 다시 누르면 꺼집니다." />
+		<string id="AHAVIB_MD2uxJv" text="누르기" />
+		<string id="AHAVIB_rXGdKCl" text="전환" />
+		<string id="AHAVIB_9U5WAxT" text="키보드 키" />
+		<string id="AHAVIB_TRmYzya" text="강조를 실행하는 키보드/마우스 키입니다. 컨트롤러 버튼과 동시에 작동합니다." />
+		<string id="AHAVIB_Z0Sthax" text="컨트롤러 버튼" />
+		<string id="AHAVIB_Hr08eFW" text="강조를 실행하는 컨트롤러 버튼입니다. 기본 전투 조작과 겹치지 않도록 기본값은 '없음'입니다." />
+		<string id="AHAVIB_G8b0Yhl" text="강조 거리" />
+		<string id="AHAVIB_pXZG4OQ" text="카메라에서 이 거리보다 멀리 있는 영웅은 윤곽선이 표시되지 않습니다. 기본값: 30." />
+		<string id="AHAVIB_M8hnjkJ" text="이름 표시" />
+		<string id="AHAVIB_DBOWj8p" text="강조되는 동안 영웅의 머리 위에 윤곽선과 같은 색으로 이름을 표시합니다." />
+		<string id="AHAVIB_4Mz1FTK" text="기술 설정" />
+		<string id="AHAVIB_Eusi1Fl" text="디버깅을 위한 로깅" />
+		<string id="AHAVIB_qG1M3vg" text="디버깅을 위한 로깅(영어 전용). [기본값: 비활성화]" />
+		<string id="AHAVIB_By7fwJl" text="없음" />
+		<string id="AHAVIB_TaVU9w0" text="왼쪽 Alt" />
+		<string id="AHAVIB_KjnHnX8" text="오른쪽 Alt" />
+		<string id="AHAVIB_DgHXJbV" text="왼쪽 Ctrl" />
+		<string id="AHAVIB_9HQF37j" text="오른쪽 Ctrl" />
+		<string id="AHAVIB_Pr5t93m" text="왼쪽 Shift" />
+		<string id="AHAVIB_2vBNAO3" text="오른쪽 Shift" />
+		<string id="AHAVIB_GSOIStK" text="Caps Lock" />
+		<string id="AHAVIB_uuLi3dv" text="물결표 (~)" />
+		<string id="AHAVIB_SlH069C" text="스페이스" />
+		<string id="AHAVIB_Dbw36Du" text="마우스 가운데 버튼" />
+		<string id="AHAVIB_harmWn3" text="마우스 버튼 4" />
+		<string id="AHAVIB_o7wElX9" text="마우스 버튼 5" />
+		<string id="AHAVIB_S46ybFf" text="왼쪽 범퍼 (LB)" />
+		<string id="AHAVIB_OGVyJgI" text="오른쪽 범퍼 (RB)" />
+		<string id="AHAVIB_XGdRCo0" text="왼쪽 트리거 (LT)" />
+		<string id="AHAVIB_QyyVpW6" text="오른쪽 트리거 (RT)" />
+		<string id="AHAVIB_K8jcDhg" text="왼쪽 스틱 누르기 (L3)" />
+		<string id="AHAVIB_pWE4Cv4" text="오른쪽 스틱 누르기 (R3)" />
+		<string id="AHAVIB_fjBAPdL" text="보기 / 뒤로" />
+		<string id="AHAVIB_d5tuuHv" text="메뉴 / 시작" />
+		<string id="AHAVIB_kJfinXP" text="방향 패드 위" />
+		<string id="AHAVIB_YRWSWqS" text="방향 패드 아래" />
+		<string id="AHAVIB_I2B3vV3" text="방향 패드 왼쪽" />
+		<string id="AHAVIB_A4aYmze" text="방향 패드 오른쪽" />
+		<string id="AHAVIB_GE95O2m" text="위쪽 버튼 (Y)" />
+		<string id="AHAVIB_Jt8H37Y" text="아래쪽 버튼 (A)" />
+		<string id="AHAVIB_12gprT8" text="왼쪽 버튼 (X)" />
+		<string id="AHAVIB_BKKaO0D" text="오른쪽 버튼 (B)" />
+	</strings>
+</base>

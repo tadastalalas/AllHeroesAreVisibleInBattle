@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+	<tags>
+		<tag language="Deutsch" />
+	</tags>
+	<strings>
+		<string id="AHAVIB_XGHAHVA" text="Alle Helden sind im Kampf sichtbar" />
+		<string id="AHAVIB_qhfqjNf" text="Allgemein" />
+		<string id="AHAVIB_IGpDb3w" text="Hervorhebungsmodus" />
+		<string id="AHAVIB_mpbOfUj" text="Halten: Hervorhebung nur, solange die Taste gedrückt wird. Umschalten: einmal drücken zum Einschalten, erneut drücken zum Ausschalten." />
+		<string id="AHAVIB_MD2uxJv" text="Halten" />
+		<string id="AHAVIB_rXGdKCl" text="Umschalten" />
+		<string id="AHAVIB_9U5WAxT" text="Tastaturtaste" />
+		<string id="AHAVIB_TRmYzya" text="Tastatur- / Maustaste, die die Hervorhebung auslöst. Funktioniert gleichzeitig mit der Controller-Taste." />
+		<string id="AHAVIB_Z0Sthax" text="Controller-Taste" />
+		<string id="AHAVIB_Hr08eFW" text="Controller-Taste, die die Hervorhebung auslöst. Standard ist Keine, um Konflikte mit der normalen Kampfbelegung zu vermeiden." />
+		<string id="AHAVIB_G8b0Yhl" text="Hervorhebungsdistanz" />
+		<string id="AHAVIB_pXZG4OQ" text="Helden, die weiter als dieser Wert von der Kamera entfernt sind, werden nicht umrandet. Standard: 30." />
+		<string id="AHAVIB_M8hnjkJ" text="Namen anzeigen" />
+		<string id="AHAVIB_DBOWj8p" text="Zeigt den Namen des Helden während der Hervorhebung über seinem Kopf an, in derselben Farbe wie die Umrandung." />
+		<string id="AHAVIB_4Mz1FTK" text="Technische Einstellungen" />
+		<string id="AHAVIB_Eusi1Fl" text="Protokollierung für Debugging" />
+		<string id="AHAVIB_qG1M3vg" text="Protokollierung für Debugging (nur Englisch). [Standard: deaktiviert]" />
+		<string id="AHAVIB_By7fwJl" text="Keine" />
+		<string id="AHAVIB_TaVU9w0" text="Alt links" />
+		<string id="AHAVIB_KjnHnX8" text="Alt rechts" />
+		<string id="AHAVIB_DgHXJbV" text="Strg links" />
+		<string id="AHAVIB_9HQF37j" text="Strg rechts" />
+		<string id="AHAVIB_Pr5t93m" text="Umschalt links" />
+		<string id="AHAVIB_2vBNAO3" text="Umschalt rechts" />
+		<string id="AHAVIB_GSOIStK" text="Feststelltaste" />
+		<string id="AHAVIB_uuLi3dv" text="Tilde (~)" />
+		<string id="AHAVIB_SlH069C" text="Leertaste" />
+		<string id="AHAVIB_Dbw36Du" text="Mittlere Maustaste" />
+		<string id="AHAVIB_harmWn3" text="Maustaste 4" />
+		<string id="AHAVIB_o7wElX9" text="Maustaste 5" />
+		<string id="AHAVIB_S46ybFf" text="Linke Schultertaste (LB)" />
+		<string id="AHAVIB_OGVyJgI" text="Rechte Schultertaste (RB)" />
+		<string id="AHAVIB_XGdRCo0" text="Linker Trigger (LT)" />
+		<string id="AHAVIB_QyyVpW6" text="Rechter Trigger (RT)" />
+		<string id="AHAVIB_K8jcDhg" text="Linken Stick drücken (L3)" />
+		<string id="AHAVIB_pWE4Cv4" text="Rechten Stick drücken (R3)" />
+		<string id="AHAVIB_fjBAPdL" text="Ansicht / Zurück" />
+		<string id="AHAVIB_d5tuuHv" text="Menü / Start" />
+		<string id="AHAVIB_kJfinXP" text="Steuerkreuz oben" />
+		<string id="AHAVIB_YRWSWqS" text="Steuerkreuz unten" />
+		<string id="AHAVIB_I2B3vV3" text="Steuerkreuz links" />
+		<string id="AHAVIB_A4aYmze" text="Steuerkreuz rechts" />
+		<string id="AHAVIB_GE95O2m" text="Obere Taste (Y)" />
+		<string id="AHAVIB_Jt8H37Y" text="Untere Taste (A)" />
+		<string id="AHAVIB_12gprT8" text="Linke Taste (X)" />
+		<string id="AHAVIB_BKKaO0D" text="Rechte Taste (B)" />
+	</strings>
+</base>

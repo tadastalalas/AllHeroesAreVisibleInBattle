@@ -1,0 +1,6 @@
+AHAVIB v1.5.7.0 :
+
+- Updated for game version 1.5.7. One download now supports game versions 1.5.7 and older 1.4.8, 1.4.7.
+- MCM is optional from now on. Players without MCM can use the ModConfiguration.xml file to change settings.
+- Added the "Logging for debugging" setting. The log file is in Modules\AllHeroesAreVisibleInBattle\logs\.
+- Added translations for 12 languages.

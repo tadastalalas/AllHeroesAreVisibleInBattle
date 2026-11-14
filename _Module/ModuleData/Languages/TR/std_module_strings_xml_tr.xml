@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+	<tags>
+		<tag language="Türkçe" />
+	</tags>
+	<strings>
+		<string id="AHAVIB_XGHAHVA" text="Savaşta Tüm Kahramanlar Görünür" />
+		<string id="AHAVIB_qhfqjNf" text="Genel" />
+		<string id="AHAVIB_IGpDb3w" text="Vurgulama Modu" />
+		<string id="AHAVIB_mpbOfUj" text="Basılı tut: yalnızca tuş basılıyken vurgular. Aç/Kapat: açmak için bir kez, kapatmak için tekrar basın." />
+		<string id="AHAVIB_MD2uxJv" text="Basılı tut" />
+		<string id="AHAVIB_rXGdKCl" text="Aç/Kapat" />
+		<string id="AHAVIB_9U5WAxT" text="Klavye Tuşu" />
+		<string id="AHAVIB_TRmYzya" text="Vurgulamayı başlatan klavye / fare tuşu. Kumanda düğmesiyle aynı anda çalışır." />
+		<string id="AHAVIB_Z0Sthax" text="Kumanda Düğmesi" />
+		<string id="AHAVIB_Hr08eFW" text="Vurgulamayı başlatan kumanda düğmesi. Oyunun savaş tuşlarıyla çakışmaması için varsayılan Yok'tur." />
+		<string id="AHAVIB_G8b0Yhl" text="Vurgulama Mesafesi" />
+		<string id="AHAVIB_pXZG4OQ" text="Kameraya bu mesafeden daha uzak olan kahramanların dış hatları çizilmez. Varsayılan: 30." />
+		<string id="AHAVIB_M8hnjkJ" text="İsimleri Göster" />
+		<string id="AHAVIB_DBOWj8p" text="Vurgulanırken kahramanın adını başının üstünde, dış hatla aynı renkte gösterir." />
+		<string id="AHAVIB_4Mz1FTK" text="Teknik ayarlar" />
+		<string id="AHAVIB_Eusi1Fl" text="Hata ayıklama için günlük kaydı" />
+		<string id="AHAVIB_qG1M3vg" text="Hata ayıklama için günlük kaydı (yalnızca İngilizce). [Varsayılan: devre dışı]" />
+		<string id="AHAVIB_By7fwJl" text="Yok" />
+		<string id="AHAVIB_TaVU9w0" text="Sol Alt" />
+		<string id="AHAVIB_KjnHnX8" text="Sağ Alt" />
+		<string id="AHAVIB_DgHXJbV" text="Sol Ctrl" />
+		<string id="AHAVIB_9HQF37j" text="Sağ Ctrl" />
+		<string id="AHAVIB_Pr5t93m" text="Sol Shift" />
+		<string id="AHAVIB_2vBNAO3" text="Sağ Shift" />
+		<string id="AHAVIB_GSOIStK" text="Caps Lock" />
+		<string id="AHAVIB_uuLi3dv" text="Tilde (~)" />
+		<string id="AHAVIB_SlH069C" text="Boşluk" />
+		<string id="AHAVIB_Dbw36Du" text="Farenin Orta Tuşu" />
+		<string id="AHAVIB_harmWn3" text="Fare Tuşu 4" />
+		<string id="AHAVIB_o7wElX9" text="Fare Tuşu 5" />
+		<string id="AHAVIB_S46ybFf" text="Sol Bumper (LB)" />
+		<string id="AHAVIB_OGVyJgI" text="Sağ Bumper (RB)" />
+		<string id="AHAVIB_XGdRCo0" text="Sol Tetik (LT)" />
+		<string id="AHAVIB_QyyVpW6" text="Sağ Tetik (RT)" />
+		<string id="AHAVIB_K8jcDhg" text="Sol Çubuğa Basma (L3)" />
+		<string id="AHAVIB_pWE4Cv4" text="Sağ Çubuğa Basma (R3)" />
+		<string id="AHAVIB_fjBAPdL" text="Görünüm / Geri" />
+		<string id="AHAVIB_d5tuuHv" text="Menü / Başlat" />
+		<string id="AHAVIB_kJfinXP" text="Yön Tuşu Yukarı" />
+		<string id="AHAVIB_YRWSWqS" text="Yön Tuşu Aşağı" />
+		<string id="AHAVIB_I2B3vV3" text="Yön Tuşu Sol" />
+		<string id="AHAVIB_A4aYmze" text="Yön Tuşu Sağ" />
+		<string id="AHAVIB_GE95O2m" text="Üst Düğme (Y)" />
+		<string id="AHAVIB_Jt8H37Y" text="Alt Düğme (A)" />
+		<string id="AHAVIB_12gprT8" text="Sol Düğme (X)" />
+		<string id="AHAVIB_BKKaO0D" text="Sağ Düğme (B)" />
+	</strings>
+</base>

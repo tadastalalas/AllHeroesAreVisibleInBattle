@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+	<tags>
+		<tag language="Русский" />
+	</tags>
+	<strings>
+		<string id="AHAVIB_XGHAHVA" text="Все герои видны в бою" />
+		<string id="AHAVIB_qhfqjNf" text="Общие" />
+		<string id="AHAVIB_IGpDb3w" text="Режим подсветки" />
+		<string id="AHAVIB_mpbOfUj" text="Удержание: подсветка только пока клавиша нажата. Переключение: нажмите один раз, чтобы включить, и ещё раз, чтобы выключить." />
+		<string id="AHAVIB_MD2uxJv" text="Удержание" />
+		<string id="AHAVIB_rXGdKCl" text="Переключение" />
+		<string id="AHAVIB_9U5WAxT" text="Клавиша клавиатуры" />
+		<string id="AHAVIB_TRmYzya" text="Клавиша клавиатуры / мыши, включающая подсветку. Работает одновременно с кнопкой геймпада." />
+		<string id="AHAVIB_Z0Sthax" text="Кнопка геймпада" />
+		<string id="AHAVIB_Hr08eFW" text="Кнопка геймпада, включающая подсветку. По умолчанию — Нет, чтобы избежать конфликта со стандартным управлением в бою." />
+		<string id="AHAVIB_G8b0Yhl" text="Дальность подсветки" />
+		<string id="AHAVIB_pXZG4OQ" text="Герои дальше этого расстояния от камеры не обводятся контуром. По умолчанию: 30." />
+		<string id="AHAVIB_M8hnjkJ" text="Показывать имена" />
+		<string id="AHAVIB_DBOWj8p" text="Показывает имя героя над его головой во время подсветки тем же цветом, что и контур." />
+		<string id="AHAVIB_4Mz1FTK" text="Технические настройки" />
+		<string id="AHAVIB_Eusi1Fl" text="Логирование для отладки" />
+		<string id="AHAVIB_qG1M3vg" text="Логирование для отладки (только на английском). [По умолчанию: отключено]" />
+		<string id="AHAVIB_By7fwJl" text="Нет" />
+		<string id="AHAVIB_TaVU9w0" text="Левый Alt" />
+		<string id="AHAVIB_KjnHnX8" text="Правый Alt" />
+		<string id="AHAVIB_DgHXJbV" text="Левый Ctrl" />
+		<string id="AHAVIB_9HQF37j" text="Правый Ctrl" />
+		<string id="AHAVIB_Pr5t93m" text="Левый Shift" />
+		<string id="AHAVIB_2vBNAO3" text="Правый Shift" />
+		<string id="AHAVIB_GSOIStK" text="Caps Lock" />
+		<string id="AHAVIB_uuLi3dv" text="Тильда (~)" />
+		<string id="AHAVIB_SlH069C" text="Пробел" />
+		<string id="AHAVIB_Dbw36Du" text="Средняя кнопка мыши" />
+		<string id="AHAVIB_harmWn3" text="Кнопка мыши 4" />
+		<string id="AHAVIB_o7wElX9" text="Кнопка мыши 5" />
+		<string id="AHAVIB_S46ybFf" text="Левый бампер (LB)" />
+		<string id="AHAVIB_OGVyJgI" text="Правый бампер (RB)" />
+		<string id="AHAVIB_XGdRCo0" text="Левый триггер (LT)" />
+		<string id="AHAVIB_QyyVpW6" text="Правый триггер (RT)" />
+		<string id="AHAVIB_K8jcDhg" text="Нажатие левого стика (L3)" />
+		<string id="AHAVIB_pWE4Cv4" text="Нажатие правого стика (R3)" />
+		<string id="AHAVIB_fjBAPdL" text="Просмотр / Назад" />
+		<string id="AHAVIB_d5tuuHv" text="Меню / Старт" />
+		<string id="AHAVIB_kJfinXP" text="Крестовина вверх" />
+		<string id="AHAVIB_YRWSWqS" text="Крестовина вниз" />
+		<string id="AHAVIB_I2B3vV3" text="Крестовина влево" />
+		<string id="AHAVIB_A4aYmze" text="Крестовина вправо" />
+		<string id="AHAVIB_GE95O2m" text="Верхняя кнопка (Y)" />
+		<string id="AHAVIB_Jt8H37Y" text="Нижняя кнопка (A)" />
+		<string id="AHAVIB_12gprT8" text="Левая кнопка (X)" />
+		<string id="AHAVIB_BKKaO0D" text="Правая кнопка (B)" />
+	</strings>
+</base>

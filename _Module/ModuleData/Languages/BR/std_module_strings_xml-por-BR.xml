@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+	<tags>
+		<tag language="Português (BR)" />
+	</tags>
+	<strings>
+		<string id="AHAVIB_XGHAHVA" text="Todos os Heróis Visíveis em Batalha" />
+		<string id="AHAVIB_qhfqjNf" text="Geral" />
+		<string id="AHAVIB_IGpDb3w" text="Modo de Destaque" />
+		<string id="AHAVIB_mpbOfUj" text="Segurar: destaca apenas enquanto a tecla estiver pressionada. Alternar: pressione uma vez para ativar e de novo para desativar." />
+		<string id="AHAVIB_MD2uxJv" text="Segurar" />
+		<string id="AHAVIB_rXGdKCl" text="Alternar" />
+		<string id="AHAVIB_9U5WAxT" text="Tecla do Teclado" />
+		<string id="AHAVIB_TRmYzya" text="Tecla do teclado / mouse que ativa o destaque. Funciona ao mesmo tempo que o botão do controle." />
+		<string id="AHAVIB_Z0Sthax" text="Botão do Controle" />
+		<string id="AHAVIB_Hr08eFW" text="Botão do controle que ativa o destaque. O padrão é Nenhum, para evitar conflito com os comandos de combate originais." />
+		<string id="AHAVIB_G8b0Yhl" text="Distância de Destaque" />
+		<string id="AHAVIB_pXZG4OQ" text="Heróis mais distantes da câmera do que este valor não recebem contorno. Padrão: 30." />
+		<string id="AHAVIB_M8hnjkJ" text="Mostrar Nomes" />
+		<string id="AHAVIB_DBOWj8p" text="Mostra o nome do herói acima da cabeça enquanto estiver destacado, na mesma cor do contorno." />
+		<string id="AHAVIB_4Mz1FTK" text="Configurações técnicas" />
+		<string id="AHAVIB_Eusi1Fl" text="Registro para depuração" />
+		<string id="AHAVIB_qG1M3vg" text="Registro para depuração (somente em inglês). [Padrão: desabilitado]" />
+		<string id="AHAVIB_By7fwJl" text="Nenhum" />
+		<string id="AHAVIB_TaVU9w0" text="Alt Esquerdo" />
+		<string id="AHAVIB_KjnHnX8" text="Alt Direito" />
+		<string id="AHAVIB_DgHXJbV" text="Ctrl Esquerdo" />
+		<string id="AHAVIB_9HQF37j" text="Ctrl Direito" />
+		<string id="AHAVIB_Pr5t93m" text="Shift Esquerdo" />
+		<string id="AHAVIB_2vBNAO3" text="Shift Direito" />
+		<string id="AHAVIB_GSOIStK" text="Caps Lock" />
+		<string id="AHAVIB_uuLi3dv" text="Til (~)" />
+		<string id="AHAVIB_SlH069C" text="Espaço" />
+		<string id="AHAVIB_Dbw36Du" text="Botão do Meio do Mouse" />
+		<string id="AHAVIB_harmWn3" text="Botão 4 do Mouse" />
+		<string id="AHAVIB_o7wElX9" text="Botão 5 do Mouse" />
+		<string id="AHAVIB_S46ybFf" text="Bumper Esquerdo (LB)" />
+		<string id="AHAVIB_OGVyJgI" text="Bumper Direito (RB)" />
+		<string id="AHAVIB_XGdRCo0" text="Gatilho Esquerdo (LT)" />
+		<string id="AHAVIB_QyyVpW6" text="Gatilho Direito (RT)" />
+		<string id="AHAVIB_K8jcDhg" text="Clique do Analógico Esquerdo (L3)" />
+		<string id="AHAVIB_pWE4Cv4" text="Clique do Analógico Direito (R3)" />
+		<string id="AHAVIB_fjBAPdL" text="Exibir / Voltar" />
+		<string id="AHAVIB_d5tuuHv" text="Menu / Iniciar" />
+		<string id="AHAVIB_kJfinXP" text="Direcional para Cima" />
+		<string id="AHAVIB_YRWSWqS" text="Direcional para Baixo" />
+		<string id="AHAVIB_I2B3vV3" text="Direcional para a Esquerda" />
+		<string id="AHAVIB_A4aYmze" text="Direcional para a Direita" />
+		<string id="AHAVIB_GE95O2m" text="Botão de Cima (Y)" />
+		<string id="AHAVIB_Jt8H37Y" text="Botão de Baixo (A)" />
+		<string id="AHAVIB_12gprT8" text="Botão da Esquerda (X)" />
+		<string id="AHAVIB_BKKaO0D" text="Botão da Direita (B)" />
+	</strings>
+</base>
